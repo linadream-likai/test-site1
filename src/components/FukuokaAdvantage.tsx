@@ -1,6 +1,6 @@
 import React from 'react';
 import { Language } from '../types';
-import { Compass, Award, Users, Heart } from 'lucide-react';
+import { Map, Shield, Users, Zap } from 'lucide-react';
 
 interface FukuokaAdvantageProps {
   lang: Language;
@@ -9,117 +9,84 @@ interface FukuokaAdvantageProps {
 export default function FukuokaAdvantage({ lang }: FukuokaAdvantageProps) {
   const advantages = [
     {
-      icon: Compass,
+      icon: Map,
       title: {
         ja: 'アジアの玄関口としての立地',
         en: 'Gateway to Asia'
       },
-      description: {
-        ja: '東京よりもソウルや上海に近く、アジア全域へのビジネス展開やグローバルな人材獲得に最適な地理的優位性を持っています。',
-        en: 'Geographically closer to Seoul and Shanghai than Tokyo, offering unparalleled access to Asian markets and global talent.'
+      desc: {
+        ja: '東京よりもソウルや上海、台北に近く、アジア市場への展開やグローバルチームとの連携に最適な地理的優位性を持っています。',
+        en: 'Closer to Seoul, Shanghai, and Taipei than Tokyo, offering unmatched geographical advantages for Asian market expansion.'
       }
     },
     {
-      icon: Award,
+      icon: Shield,
       title: {
-        ja: '国家戦略特区（スタートアップ都市）',
+        ja: '国家戦略特区の恩恵',
         en: 'National Strategic Special Zone'
       },
-      description: {
-        ja: '「スタートアップビザ」や税制優遇など、市を挙げた強力なIT・起業支援体制が整っており、イノベーションが生まれやすい環境です。',
-        en: 'Fukuoka offers robust startup support, including startup visas and tax incentives, fostering a highly innovative ecosystem.'
+      desc: {
+        ja: '「グローバル創業・雇用創出特区」として、スタートアップビザや税制優遇など、グローバルな挑戦を後押しする制度が整っています。',
+        en: 'Benefiting from startup visas and tax incentives designed to foster global entrepreneurship and innovation.'
       }
     },
     {
       icon: Users,
       title: {
-        ja: '優秀なグローバルIT人材の集積',
-        en: 'Elite Global Tech Talent'
+        ja: '優秀なグローバル人材の集積',
+        en: 'Elite Global Talent Pool'
       },
-      description: {
-        ja: '国内外から優秀なエンジニアが集まる街。多国籍なチーム編成により、多様な視点と高い技術力を両立した開発が可能です。',
-        en: 'A magnet for top-tier domestic and international engineers, enabling diverse perspectives and world-class technical execution.'
+      desc: {
+        ja: '住みやすさ世界トップクラスの福岡には、国内外から優秀なエンジニアが集まります。多国籍で多様な視点を持つチームを編成可能です。',
+        en: 'Ranked among the world\'s most livable cities, Fukuoka attracts top-tier domestic and international engineering talent.'
       }
     },
     {
-      icon: Heart,
+      icon: Zap,
       title: {
-        ja: '抜群の住みやすさとクリエイティビティ',
-        en: 'Exceptional Quality of Life'
+        ja: '高いコストパフォーマンス',
+        en: 'Cost-Effective Operations'
       },
-      description: {
-        ja: '豊かな自然、美味しい食文化、コンパクトな都市設計。エンジニアがストレスフリーでクリエイティブに働ける最高の環境です。',
-        en: 'Rich nature, world-famous food culture, and compact city design. The perfect environment for engineers to stay creative and inspired.'
+      desc: {
+        ja: '東京と比較してオフィス賃料や生活コストが低いため、開発クオリティを妥協することなく、最適なコストでの開発が可能です。',
+        en: 'Lower operating and living costs compared to Tokyo allow us to deliver premium quality development at optimized rates.'
       }
     }
   ];
 
   return (
-    <section id="advantage" className="py-24 bg-[#262626] relative overflow-hidden">
-      {/* Decorative background glow */}
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#9E7FFF]/5 rounded-full blur-[120px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-xs font-bold tracking-widest text-[#38bdf8] uppercase mb-3">
-            {lang === 'ja' ? 'なぜ福岡なのか？' : 'WHY FUKUOKA?'}
+    <section id="advantage" className="py-20 bg-white border-t border-[#E9E9E6]">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="text-xs font-bold tracking-widest text-[#787774] uppercase mb-2">
+            {lang === 'ja' ? '福岡の強み' : 'FUKUOKA ADVANTAGE'}
           </h2>
-          <p className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
-            {lang === 'ja' ? '福岡から、世界基準のイノベーションを' : 'Global Innovation from Japan\'s Tech Hub'}
-          </p>
-          <p className="text-[#A3A3A3] text-lg">
-            {lang === 'ja'
-              ? '日本で最も活気のあるスタートアップ都市・福岡。この街ならではの強みを活かし、私たちは最高品質のITソリューションを生み出します。'
-              : 'Fukuoka is Japan\'s fastest-growing startup city. Leveraging its unique advantages, we deliver world-class digital solutions.'}
+          <p className="text-2xl sm:text-3xl font-bold text-[#37352F] tracking-tight">
+            {lang === 'ja' ? 'なぜ、福岡から世界を目指すのか' : 'Why We Build from Fukuoka'}
           </p>
         </div>
 
-        {/* Advantages Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {advantages.map((adv, idx) => {
-            const Icon = adv.icon;
+          {advantages.map((item, index) => {
+            const Icon = item.icon;
             return (
-              <div
-                key={idx}
-                className="flex gap-6 p-8 bg-[#171717] border border-[#2F2F2F] rounded-2xl hover:border-[#38bdf8]/50 transition-all duration-300"
-              >
-                <div className="shrink-0">
-                  <div className="p-4 bg-[#262626] rounded-xl border border-[#2F2F2F] text-[#38bdf8]">
-                    <Icon className="w-6 h-6" />
+              <div key={index} className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <div className="p-2 bg-[#F1F1EF] border border-[#E9E9E6] rounded-[4px] text-[#37352F]">
+                    <Icon className="w-4 h-4" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-3">
-                    {adv.title[lang]}
+                  <h3 className="text-base font-bold text-[#37352F] mb-1.5">
+                    {item.title[lang]}
                   </h3>
-                  <p className="text-[#A3A3A3] leading-relaxed text-sm sm:text-base">
-                    {adv.description[lang]}
+                  <p className="text-sm text-[#787774] leading-[1.6]">
+                    {item.desc[lang]}
                   </p>
                 </div>
               </div>
             );
           })}
-        </div>
-
-        {/* Fukuoka Stats Banner */}
-        <div className="mt-16 p-8 rounded-2xl bg-gradient-to-r from-[#9E7FFF]/10 to-[#38bdf8]/10 border border-[#2F2F2F] flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-center md:text-left">
-            <h4 className="text-lg font-bold text-white mb-1">
-              {lang === 'ja' ? '福岡市は「スタートアップ都市」推進中！' : 'Fukuoka: Japan\'s Official Startup City'}
-            </h4>
-            <p className="text-sm text-[#A3A3A3]">
-              {lang === 'ja'
-                ? '国家戦略特区に指定され、開業率日本一を誇る、今最もエネルギッシュな都市です。'
-                : 'Designated as a National Strategic Special Zone, boasting the highest business opening rate in Japan.'}
-            </p>
-          </div>
-          <a
-            href="#contact"
-            className="px-6 py-3 rounded-xl bg-white text-black font-bold hover:bg-gray-100 transition-colors text-sm shrink-0"
-          >
-            {lang === 'ja' ? '福岡での開発について相談する' : 'Consult with Our Fukuoka Team'}
-          </a>
         </div>
       </div>
     </section>

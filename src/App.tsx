@@ -15,7 +15,7 @@ function App() {
   const [lang, setLang] = useState<Language>('ja');
 
   return (
-    <div className="min-h-screen bg-[#171717] text-white font-sans selection:bg-[#9E7FFF]/30 selection:text-white">
+    <div className="min-h-screen bg-[#FBFBFA] text-[#37352F] font-sans selection:bg-[#EBF5FE] selection:text-[#37352F] antialiased">
       {/* Navigation */}
       <Navbar lang={lang} setLang={setLang} />
 

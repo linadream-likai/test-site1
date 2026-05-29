@@ -8,48 +8,48 @@ interface FooterProps {
 
 export default function Footer({ lang }: FooterProps) {
   return (
-    <footer className="bg-[#171717] border-t border-[#2F2F2F] py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-[#FBFBFA] border-t border-[#E9E9E6] py-10">
+      <div className="max-w-5xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-gradient-to-br from-[#9E7FFF] to-[#38bdf8] rounded-lg">
-              <Terminal className="w-5 h-5 text-white" />
+          <div className="flex items-center gap-2.5">
+            <div className="p-1.5 bg-white border border-[#E9E9E6] rounded-[4px]">
+              <Terminal className="w-4 h-4 text-[#37352F]" />
             </div>
-            <div>
-              <span className="text-2xl font-extrabold tracking-tight text-white lowercase">
+            <div className="flex flex-col">
+              <span className="text-base font-bold tracking-tight text-[#37352F] lowercase leading-none">
                 linadream
               </span>
-              <span className="block text-[9px] text-[#A3A3A3] tracking-widest uppercase font-semibold">
+              <span className="text-[8px] text-[#787774] tracking-wider uppercase font-medium mt-0.5">
                 Tech Solutions
               </span>
             </div>
           </div>
 
           {/* Copyright */}
-          <p className="text-xs text-[#A3A3A3] text-center md:text-left">
+          <p className="text-xs text-[#787774] text-center md:text-left">
             &copy; {new Date().getFullYear()} linadream. All rights reserved.
           </p>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             <a
               href="#"
-              className="p-2 rounded-lg bg-[#262626] border border-[#2F2F2F] text-[#A3A3A3] hover:text-white hover:border-gray-600 transition-all"
+              className="p-1.5 rounded-[4px] bg-white border border-[#E9E9E6] text-[#787774] hover:text-[#37352F] hover:bg-[#F1F1EF] transition-all"
             >
-              <Twitter className="w-4 h-4" />
+              <Twitter className="w-3.5 h-3.5" />
             </a>
             <a
               href="#"
-              className="p-2 rounded-lg bg-[#262626] border border-[#2F2F2F] text-[#A3A3A3] hover:text-white hover:border-gray-600 transition-all"
+              className="p-1.5 rounded-[4px] bg-white border border-[#E9E9E6] text-[#787774] hover:text-[#37352F] hover:bg-[#F1F1EF] transition-all"
             >
-              <Github className="w-4 h-4" />
+              <Github className="w-3.5 h-3.5" />
             </a>
             <a
               href="#"
-              className="p-2 rounded-lg bg-[#262626] border border-[#2F2F2F] text-[#A3A3A3] hover:text-white hover:border-gray-600 transition-all"
+              className="p-1.5 rounded-[4px] bg-white border border-[#E9E9E6] text-[#787774] hover:text-[#37352F] hover:bg-[#F1F1EF] transition-all"
             >
-              <Linkedin className="w-4 h-4" />
+              <Linkedin className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>

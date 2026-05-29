@@ -8,49 +8,46 @@ interface TechStackProps {
 export default function TechStack({ lang }: TechStackProps) {
   const categories = [
     {
-      name: { ja: 'フロントエンド', en: 'Frontend' },
-      techs: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vue.js', 'Svelte']
+      title: { ja: 'フロントエンド', en: 'Frontend' },
+      techs: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'GraphQL']
     },
     {
-      name: { ja: 'バックエンド', en: 'Backend' },
-      techs: ['Go', 'Node.js', 'Python', 'FastAPI', 'Ruby on Rails', 'GraphQL']
+      title: { ja: 'バックエンド', en: 'Backend' },
+      techs: ['Go', 'Node.js', 'Python', 'FastAPI', 'PostgreSQL']
     },
     {
-      name: { ja: 'インフラ / クラウド', en: 'Cloud & DevOps' },
-      techs: ['AWS', 'Google Cloud', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions']
+      title: { ja: 'インフラ / DevOps', en: 'Infrastructure' },
+      techs: ['AWS', 'Google Cloud', 'Docker', 'Kubernetes', 'Terraform']
     },
     {
-      name: { ja: 'AI / データサイエンス', en: 'AI & Data' },
-      techs: ['PyTorch', 'TensorFlow', 'OpenAI API', 'LangChain', 'PostgreSQL', 'Redis']
+      title: { ja: 'AI / データ解析', en: 'AI & Data' },
+      techs: ['PyTorch', 'TensorFlow', 'OpenAI API', 'LangChain', 'Pandas']
     }
   ];
 
   return (
-    <section className="py-20 bg-[#171717] border-t border-[#2F2F2F]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-xs font-bold tracking-widest text-[#9E7FFF] uppercase mb-3">
+    <section className="py-20 bg-[#FBFBFA] border-t border-[#E9E9E6]">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="text-xs font-bold tracking-widest text-[#787774] uppercase mb-2">
             {lang === 'ja' ? '技術スタック' : 'TECH STACK'}
           </h2>
-          <p className="text-2xl sm:text-3xl font-extrabold text-white">
-            {lang === 'ja' ? 'モダンで堅牢なテクノロジーを採用' : 'Modern & Robust Technologies'}
+          <p className="text-2xl sm:text-3xl font-bold text-[#37352F] tracking-tight">
+            {lang === 'ja' ? 'モダンで堅牢な開発を支える技術' : 'Modern & Robust Technologies'}
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((cat, idx) => (
-            <div
-              key={idx}
-              className="p-6 bg-[#262626] border border-[#2F2F2F] rounded-xl hover:border-[#9E7FFF]/30 transition-all duration-300"
-            >
-              <h3 className="text-sm font-bold text-[#38bdf8] uppercase tracking-wider mb-4 pb-2 border-b border-[#2F2F2F]">
-                {cat.name[lang]}
+            <div key={idx} className="bg-white border border-[#E9E9E6] rounded-[6px] p-5 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
+              <h3 className="text-xs font-bold text-[#787774] uppercase tracking-wider mb-4 pb-2 border-b border-[#E9E9E6]">
+                {cat.title[lang]}
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5">
                 {cat.techs.map((tech, tIdx) => (
                   <span
                     key={tIdx}
-                    className="px-3 py-1.5 text-xs font-medium bg-[#171717] text-gray-300 rounded-md border border-[#2F2F2F] hover:border-[#9E7FFF]/50 hover:text-white transition-colors"
+                    className="text-xs font-medium text-[#37352F] bg-[#F1F1EF] px-2 py-1 rounded-[3px] border border-[#E9E9E6]/60"
                   >
                     {tech}
                   </span>
